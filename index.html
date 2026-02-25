@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IU Football Countdown Clock</title>
 
-<!-- Open Graph (iMessage Preview) -->
+<!-- Open Graph -->
 <meta property="og:title" content="IU Football Countdown Clock">
 <meta property="og:description" content="Indiana Hoosiers vs North Texas — Live countdown to kickoff on September 5, 2026 at Noon ET.">
 <meta property="og:type" content="website">
@@ -30,6 +30,7 @@
     min-height:100vh;
     padding:env(safe-area-inset-top) 20px env(safe-area-inset-bottom);
     text-align:center;
+    overflow-x:hidden;
   }
 
   .main-title {
@@ -37,7 +38,28 @@
     letter-spacing:2px;
     text-transform:uppercase;
     opacity:.85;
-    margin-bottom:14px;
+    margin-bottom:10px;
+  }
+
+  /* Moving football */
+  .field {
+    width:100%;
+    max-width:500px;
+    height:50px;
+    position:relative;
+    margin-bottom:15px;
+    overflow:hidden;
+  }
+
+  .football {
+    position:absolute;
+    font-size:34px;
+    animation: moveBall 4s linear infinite alternate;
+  }
+
+  @keyframes moveBall {
+    from { left: 0; }
+    to { left: calc(100% - 34px); }
   }
 
   h1 {
@@ -98,6 +120,10 @@
 <body>
 
 <div class="main-title">IU Football Countdown Clock</div>
+
+<div class="field">
+  <div class="football">🏈</div>
+</div>
 
 <h1>Indiana Hoosiers vs North Texas Mean Green</h1>
 <h2>Season Opener — September 5, 2026 — 12:00 PM ET</h2>
